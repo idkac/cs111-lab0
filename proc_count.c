@@ -8,13 +8,13 @@ static struct proc_dir_entry *entry;
 
 static int proc_count(struct seq_file *m, void *v){
 	int processCount = 0;
-	struct tast_struct *task;
+	struct task_struct *task;
 	for_each_process(task)
 	{
 		processCount++;
 	}
 
-	seq_printf(m, "Process count: %d\n", processCount);
+	seq_printf(m, "%d\n", processCount);
 	return 0;
 }
 
